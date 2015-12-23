@@ -11,6 +11,7 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private String mSuspect;
 
     public String getTitle() {
         return mTitle;
@@ -41,8 +42,22 @@ public class Crime {
     }
 
     public Crime() {
+        this(UUID.randomUUID());
+    }
+
+    public Crime(UUID id) {
         //Generate unique identifier
-        mID = UUID.randomUUID();
+        mID = id;
         mDate = new Date();
+        mTitle = "new title";
+        mSolved = false;
+    }
+
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
     }
 }
